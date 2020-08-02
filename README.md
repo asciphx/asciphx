@@ -1,4 +1,4 @@
-## Example how to use [Asciphx]
+## Example how to use Asciphx
 1. clone repository 
 2. install `eslint` globlly: `npm i -g eslint`
 3. run `npm i`
