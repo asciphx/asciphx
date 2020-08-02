@@ -31,5 +31,5 @@ or
     "dev": "node dist/index.js",
     "start": "babel src --out-dir dist && node dist/index.js"
 ```
-2. **打赏微信二维码**：
-<img src="20200802173053.jpg" height=400/>
+2. **请点赞本项目**：
+当star数超过个位，项目将发布源代码
