@@ -1,14 +1,48 @@
-# 目录结构
+# Asciphx
+使用 Babel + typeORM + Mysql + Fastify 构建，一个类似于Java的SpringBoot架构，但同时具有.net Core的性能。
+
+## 主要特性
+
+- 允许使用Typescript，强类型、类型推断、编译期类型检查等，为后端开发和维护提供支持
+- 模块化开发，让应用程序更容易分层，提供了易于使用的模块化管理机制
+- 轻松编写 AOP 代码，面向切面编程，轻松实现日志、拦截器、过滤器等功能
+- 支持 TypeORM，最好的 Typescript ORM 框架，轻松编写 DAO 层的各类逻辑
+- 轻松构建 MVC、API、websocket、微服务等系统
+- ......
+
+## Demo
+- [KOA](./sample/KOA/README-zh_CN.md) KOA框架，写起来稍微麻烦但速度兼具的框架🎁
+- [express](./sample/express/README-zh_CN.md) express架构，写起来很方便，只是性能稍微略低了点🎁
+
+## 特征
+- [x] Class类装饰器默认值为 "/"+实体类名 ,当然也可以自定义
+- [x] 自动扫描controller目录，并且配置Routes路由
+- [x] 自动扫描entity，并且生成schema.properties
+- [x] 自动生成配置路由文件以便查阅，在dist/routes目录下，也可删除，或者去src/config.js下更改printRoute为false
+- [x] babel用下一代js语法糖可以巨幅降低代码行数，还可以兼容ts类型检查，而解决ts代码过于沉长的问题
+- [x] 有几乎相近于C#:.net core架构的速度，还有java:SpringBoot框架的可维护性，前提是关闭日志打印，还有尽可能少用插件
+- [x] 如不采用typeORM库，也可以使用Sequelize，并重写entity类，采用index_old.js里面的方式查询数据库获取实体类或者自行查找映射的方法
+- [x] 精确到字母大小写的路由，大小写不匹配也会导致无法连接，遗憾的是几乎所有网站路由转成了小写，实战场景似乎较少
+- [x] 装饰器中，若是返回的非Object类型，还需在method装饰器第一个参数改数字来判断，在src/config.js的jsonSchema中，并且第二个值会是url
+- [x] 还未使用schema中的querystring,headers；如需使用，只能修改src/utils/decorator.js里面的方法，自行想办法添加。使用后估计性能会提升5%
+
+
+## 目录结构
 1. dist:`babel编译后的文件`
 2. src:`后端文件入口`
 3. src/controller:`控制层`
 4. src/entity:`实体层`
-5. src/migration:`迁移层`
-6. src/utils:`工具层`
+5. src/service:`服务层`
+6. src/migration:`迁移层`
+7. src/utils:`工具层`
+8. views:`后台ejs模板渲染文件夹`
+9. windows-lib:`windows的linux指令包（放系统path变量中或nodejs安装目录下）`
+10. dist/routes:`输出查看的路由文件，每个controller会创建一个`
 
 ## 插件支持
 1. such as:obj::func、?.、??、|>、#、||=、&&=、@decorators、function*、do{...}
 2. support strip-types. eg:function foo(one: any, two: number, three?): string {}
+
 
 ## 需要更改的配置
 1. vsCode settings:
@@ -19,6 +53,9 @@
     },
     "javascript.validate.enable": false,
 ```
+2. 请勿将await语法内用插件支持的操作符，可能会导致await失效;
+解决方案，await(...)。使用括号包裹，阻止babel翻译失败。
+3. 需要npm i -g eslint@7.6.0 以便支持内部的语法检查
 
 ## 注意
 1. **如何运行**：
@@ -31,5 +68,13 @@ or
     "dev": "node dist/index.js",
     "start": "babel src --out-dir dist && node dist/index.js"
 ```
-2. **请点赞本项目**：
-当star数超过个位，项目将发布源代码
+2. **保持命名规范**：
+controller层下的请尽量保持大小驼峰命名规范
+3. **暂时没有查询验证**：
+在schema中缺少的是querystring,headers,但是不会影响使用,可以自行添加
+schema验证目前采用src/util/tool下的ctx方法，得配合@Ctx一起使用，才行
+Fastify也是作为世界排名前五的服务端框架之一，前五还有iris，有.net core
+虽然Fastfify并不是最快的，但是论扩展和可维护性，代码可读性都非常强
+不久之后，我将会提交KOA和express版本的Babel框架，2者性能以及代码还在优化中
+3. **请点赞本项目**：
+当项目超过10颗星，将上传src目录下编译之前的后端代码，还有其他配置文件

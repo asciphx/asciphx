@@ -1,0 +1,23 @@
+{
+  "type": "mysql",
+  "host": "cdb-cktikhu2.cd.tencentcdb.com",
+  "port": 10052,
+  "username": "root",
+  "password": "TXYwwewq3",
+  "database": "test",
+  "synchronize": true,
+  "entities": [
+    "dist/entity/*.js"
+  ],
+  "subscribers": [
+    "dist/subscriber/*.js"
+  ],
+  "migrations": [
+    "dist/migration/*.js"
+  ],
+  "cli": {
+    "entitiesDir": "dist/entity",
+    "migrationsDir": "dist/migration",
+    "subscribersDir": "dist/subscriber"
+  }
+}

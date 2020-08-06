@@ -1,0 +1,37 @@
+[
+	{
+		"r": "/user/str",
+		"m": "get",
+		"a": "str"
+	},
+	{
+		"r": "/user/json",
+		"m": "get",
+		"a": "json"
+	},
+	{
+		"r": "/user",
+		"m": "get",
+		"a": "all"
+	},
+	{
+		"r": "/user/:id",
+		"m": "get",
+		"a": "one"
+	},
+	{
+		"r": "/user",
+		"m": "post",
+		"a": "save"
+	},
+	{
+		"r": "/user/:id",
+		"m": "put",
+		"a": "update"
+	},
+	{
+		"r": "/user/:id",
+		"m": "delete",
+		"a": "remove"
+	}
+]
