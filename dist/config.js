@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e={printRoute:!(exports.Config=void 0),jsonSchema:{0:"object",1:"array",2:"string",3:"number",4:"boolean"},port:80,upload:"upload",view:"views",jsonLimit:"1mb"};exports.Config=e;

@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.W=void 0;var e={Qx:function(e,i,o){i.log.info("Middleware is in `src/weblogic.`"),o()},Login:function(e,i){var o;if(null===(o=e.session)||void 0===o||!o.user)return i.redirect("/");done()}};exports.W=e;
