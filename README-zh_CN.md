@@ -15,8 +15,8 @@
 - ......
 
 ## Demo
-- [KOA](./sample/KOA/README-zh_CN.md) KOA框架，写起来稍微麻烦但速度兼具的框架🎁
-- [express](./sample/express/README-zh_CN.md) express架构，写起来很方便，只是性能稍微略低了点🎁
+- [KOA](https://github.com/asciphx/koaMvc) KOA框架，写起来稍微麻烦但速度兼具的框架🎁
+- [express](https://github.com/asciphx/expressMvc) express架构，写起来很方便，只是性能稍微略低了点🎁
 
 ## 特征
 - [x] Class类装饰器默认值为 "/"+实体类名 ,当然也可以自定义
@@ -63,10 +63,14 @@
 
 ## 注意
 1. **如何运行**：
-先开一个终端npm run watch,（以便看到babel编译后的代码）
-再开一个新终端 npm run dev用于运行项目的开发环境。
+看看有没有全局安装eslint,如果没有也可以安装在本地npm i --save-dev eslint。
+请先看配置文件在ormconfig.js，找到mysql需要的数据库，登录并创建该数据库。
+
+先开一个终端`npm run watch`,（以便看到babel编译后的代码）或者`npm run watch:pro`，(gulp编译后代码会被压缩，但是性能会提升)
+再开一个新终端`npm run dev`用于运行项目的开发环境。
+
 or
-只开一个终端，每次都用npm start，但这就不是实时编译了。
+只开一个终端，每次都用`npm run start:build`，但这就不是实时编译了,而且可能会慢。
 ```json
     "build": "rm -rf dist && babel src -d dist --no-comments",
     "build:pro": "rm -rf dist && gulp build",
@@ -85,7 +89,7 @@ schema验证目前采用src/util/tool下的ctx方法，得配合@Ctx一起使用
 Fastify也是作为世界排名前五的服务端框架之一，前五还有iris，有.net core
 虽然Fastfify并不是最快的，但是论扩展和可维护性，代码可读性都非常强
 不久之后，我将会提交KOA和express版本的Babel框架，2者性能以及代码还在优化中
-3. **请赞助本项目**：
+4. **请赞助本项目**：
 如你觉有收获，请给我打赏
 
 ![微信打赏](http://www.91huanwei.com/1.jpg)

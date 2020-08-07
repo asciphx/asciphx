@@ -1,9 +1,9 @@
 {
   "type": "mysql",
-  "host": "cdb-cktikhu2.cd.tencentcdb.com",
-  "port": 10052,
+  "host": "127.0.0.1",
+  "port": 3306,
   "username": "root",
-  "password": "TXYwwewq3",
+  "password": "fastjs",
   "database": "test",
   "synchronize": true,
   "entities": [
