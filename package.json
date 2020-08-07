@@ -52,10 +52,13 @@
     "typeorm": "^0.2.25"
   },
   "scripts": {
-    "build": "rm -rf dist && babel src -d dist",
+    "build": "rm -rf dist && babel src -d dist --no-comments",
+    "build:pro": "rm -rf dist && gulp build",
+    "old": "node dist/index_old.js",
     "start": "node dist/index.js",
-    "start:old": "node dist/index_old.js",
-    "watch": "rm -rf dist && babel src --watch --out-dir dist",
+    "start:build": "babel src --out-dir dist --no-comments && node dist/index.js",
+    "watch": "rm -rf dist && babel src --watch --out-dir dist --no-comments",
+    "watch:pro": "rm -rf dist && gulp build && gulp watch",
     "dev": "nodemon"
   }
 }

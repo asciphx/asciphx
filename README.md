@@ -1,6 +1,10 @@
 He is a self-taught developer with 3+ years of experience who loves electric playing and programming languages. He has contributed to various open-source projects. Three years ago he fell in like with the ECMAScript programming language, and since then he hasn't cheated on for any other.At the same time, he will also use go, delphi, typescript, Java, etc
 
-# Example how to use [Asciphx中文文档](https://github.com/asciphx/asciphx/blob/master/README-zh_CN.md)
+# **Asciphx**
+> Using Babel + typeorm + MySQL + fastify + gulp to build a spring boot architecture similar to Java, but with the performance of .Net core.
+> The plug-in nodemon can also cooperate with other collaborative work to make the development more centralized and focus on writing code
+
+## Example how to use [Asciphx中文文档](https://github.com/asciphx/asciphx/blob/master/README-zh_CN.md)
 1. clone repository 
 2. install `eslint` globlly: `npm i -g eslint@7.6.0`
 3. run `npm i`
@@ -11,6 +15,17 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
 8. see `http://localhost:3000/user/json`,This is an example of return json
 9. Return * or rep.send (*) the effect is the same.Cannot be used at the same time
 10. Immediately, I will be releasing high-performance versions of express and KOA just like Fastify
+
+## Advantage
+- **Babel** uses the next generation of JS syntax sugar, which is the most concise and readable code in history
+- Support **typeorm**, the best typescript ORM framework, easily write all kinds of logic of Dao layer
+- With the blessing of **fastify**, its performance has entered the top five in the world, and its complexity has been further improved, and it can complete the best functions
+- **Gulp** can be called the king of automation. With gulp package, the code of Pro environment is more robust, but the volume is smaller
+- **Nodemon** can help more friendly development in the dev environment, but it also needs `npm run watch:pro`
+- Various plug-ins work together to allow partial use of static type modification and type inference to support back-end development and maintenance
+- Modular development makes the application easier to layer and provides an easy-to-use modular management mechanism
+- AOP code is written in a low-key way, but it is easy to realize log, interceptor, filter and other functions
+- MVC, API, websocket, microservice and other systems are constructed fastest, fastest and most fiercely
 
 ## Points for attention
 1. support experimental syntax just like obj::func、?.、??、|>、#、||=、&&=、@decorators、function*、do{...}

@@ -1,3 +1,18 @@
+# Asciphx
+> 使用 Babel + typeORM + Mysql + KOA + gulp构建，一个类似于Java的SpringBoot架构，但同时具有.net Core的性能。
+> 插件nodemon也能配合其他协同工作，让开发更集中，更专注于编写代码。
+
+## 主要特性
+- [x] **Babel**使用下一代js语法糖，堪称史上最简洁，代码可读性最棒
+- [x] 支持 **TypeORM**，最好的 Typescript ORM 框架，轻松编写 DAO 层的各类逻辑
+- [x] **gulp**堪称自动化之王，有了gulp打包使得pro环境的代码更健壮，但体积却更加小
+- [x] **nodemon**可以帮助在dev环境下，更友好的开发，但也需要先`npm run watch:pro`
+- [x] 各种插件联手，允许部分使用静态类型修饰、类型推断，为后端开发和维护提供支持
+- [x] 模块化开发，让应用程序更容易分层，提供了易于使用的模块化管理机制
+- [x] 最低调编写 AOP 代码，面向切面编程，却轻松实现日志、拦截器、过滤器等功能
+- [x] 最快，最迅速，最猛烈构建 MVC、API、websocket、微服务等系统
+- [x] ......
+
 # KOA版特性
 1. Class类装饰器默认值为 "/"+实体类名 ,当然也可以自定义
 2. 自动扫描controller，并且配置Routes路由
@@ -39,11 +54,16 @@
 先开一个终端npm run watch,（以便看到babel编译后的代码）
 再开一个新终端 npm run dev用于运行项目的开发环境。
 or
-只开一个终端，每次都用npm start，但这就不是实时编译了。
+只开一个终端，每次都用npm run start:build，但这就不是实时编译了。
 ```json
-    "watch": "babel src --watch --out-dir dist",
-    "dev": "node dist/index.js",
-    "start": "babel src --out-dir dist && node dist/index.js"
+    "format": "prettier --write \"src/**/*.js\"",
+    "build": "rm -rf dist && babel src -d dist --no-comments",
+    "build:pro": "rm -rf dist && gulp build",
+    "start": "node dist/index.js",
+    "start:build": "babel src --out-dir dist --no-comments && node dist/index.js",
+    "watch": "rm -rf dist && babel src --watch --out-dir dist --no-comments",
+    "watch:pro": "rm -rf dist && gulp build && gulp watch",
+    "dev": "nodemon"
 ```
 2. **保持命名规范**：
 controller层下的请尽量保持大小驼峰命名规范

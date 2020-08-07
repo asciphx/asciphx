@@ -1,13 +1,17 @@
 # Asciphx
-使用 Babel + typeORM + Mysql + Fastify 构建，一个类似于Java的SpringBoot架构，但同时具有.net Core的性能。
+> 使用 Babel + typeORM + Mysql + Fastify + gulp构建，一个类似于Java的SpringBoot架构，但同时具有.net Core的性能。
+> 插件nodemon也能配合其他协同工作，让开发更集中，更专注于编写代码。
 
 ## 主要特性
-
-- 允许使用Typescript，强类型、类型推断、编译期类型检查等，为后端开发和维护提供支持
+- **Babel**使用下一代js语法糖，堪称史上最简洁，代码可读性最棒
+- 支持 **TypeORM**，最好的 Typescript ORM 框架，轻松编写 DAO 层的各类逻辑
+- **Fastify**加持下，性能进入世界前五，复杂度也进一步提升，并能完成最好的功能
+- **gulp**堪称自动化之王，有了gulp打包使得pro环境的代码更健壮，但体积却更加小
+- **nodemon**可以帮助在dev环境下，更友好的开发，但也需要先`npm run watch:pro`
+- 各种插件联手，允许部分使用静态类型修饰、类型推断，为后端开发和维护提供支持
 - 模块化开发，让应用程序更容易分层，提供了易于使用的模块化管理机制
-- 轻松编写 AOP 代码，面向切面编程，轻松实现日志、拦截器、过滤器等功能
-- 支持 TypeORM，最好的 Typescript ORM 框架，轻松编写 DAO 层的各类逻辑
-- 轻松构建 MVC、API、websocket、微服务等系统
+- 最低调编写 AOP 代码，面向切面编程，却轻松实现日志、拦截器、过滤器等功能
+- 最快，最迅速，最猛烈构建 MVC、API、websocket、微服务等系统
 - ......
 
 ## Demo
@@ -64,9 +68,14 @@
 or
 只开一个终端，每次都用npm start，但这就不是实时编译了。
 ```json
-    "watch": "babel src --watch --out-dir dist",
-    "dev": "node dist/index.js",
-    "start": "babel src --out-dir dist && node dist/index.js"
+    "build": "rm -rf dist && babel src -d dist --no-comments",
+    "build:pro": "rm -rf dist && gulp build",
+    "old": "node dist/index_old.js",
+    "start": "node dist/index.js",
+    "start:build": "babel src --out-dir dist --no-comments && node dist/index.js",
+    "watch": "rm -rf dist && babel src --watch --out-dir dist --no-comments",
+    "watch:pro": "rm -rf dist && gulp build && gulp watch",
+    "dev": "nodemon"
 ```
 2. **保持命名规范**：
 controller层下的请尽量保持大小驼峰命名规范
@@ -76,5 +85,8 @@ schema验证目前采用src/util/tool下的ctx方法，得配合@Ctx一起使用
 Fastify也是作为世界排名前五的服务端框架之一，前五还有iris，有.net core
 虽然Fastfify并不是最快的，但是论扩展和可维护性，代码可读性都非常强
 不久之后，我将会提交KOA和express版本的Babel框架，2者性能以及代码还在优化中
-3. **请点赞本项目**：
-当项目超过10颗星，将上传src目录下编译之前的后端代码，还有其他配置文件
+3. **请赞助本项目**：
+如你觉有收获，请给我打赏
+
+![微信打赏](http://www.91huanwei.com/1.jpg)
+![支付宝打赏](http://www.91huanwei.com/0.jpg)
