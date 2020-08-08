@@ -32,7 +32,7 @@ createConnection().then(async conn => {
       else r.p.result={type:"object",properties:vv[r.c.name.replace(/(\w*)[A-Z]\w*/,"$1")+".js"]}
     }})
     if(i==f.length-1)h=false;
-  } console.log(Routes)
+  }//console.log(Routes)
   Routes.forEach(r=>{
     let opts={ schema: {response: {200: {type: r.s,properties:r.p}}}}
     r.w ? opts.preHandler = r.w : undefined;

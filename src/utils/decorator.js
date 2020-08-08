@@ -2,15 +2,14 @@ const fs = require('fs'),path = require('path')
 const JSONSCHEMA = require('../config').Config.jsonSchema
 const RECORDROUTE = require('../config').Config.printRoute
 
-let Routes=[],$s,$b=true;
+let Routes=[],$s,$b=true,i=0;
 const Class = (v:String) => _class => {
-  let i=0,a=[];if(v===""||typeof v==="number")v=null;
+  let a=[];if(v==="")v=null;
   v=v??_class.name.replace(/(\w*)[A-Z]\w*/,"/$1").toLocaleLowerCase();
-  for (let r of Routes) {
-    if(r.c===_class.name){
-      i=1;r.c=_class;r.r=v+r.r;a.push(r);
-    }else if(i===1)i=2;
-    if(i===2)break;
+  for (let r=i,l=Routes.length;r<l;r++){
+    if(Routes[r].c===_class.name){
+      Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(r);i++
+    }
   }
   if(RECORDROUTE){
     if(global.ONCE){$b=fs.existsSync("./dist/routes/");global.ONCE=false}else $b=true
