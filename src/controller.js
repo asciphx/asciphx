@@ -5,9 +5,6 @@ import {Class,Get} from "./utils/decorator"
 export class Controller{
   //index.html
   @Get()
-  init(req,rep){
-    html(req,rep,{test:"test",author:"asciphx"})
-  }
   @Get("index.html")
   index(req,rep){
     html(req,rep,{test:"test",author:"asciphx"})
