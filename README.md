@@ -14,7 +14,7 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
 7. see `http://localhost:3000/user/str`,This is an example of return string
 8. see `http://localhost:3000/user/json`,This is an example of return json
 9. Return * or rep.send (*) the effect is the same.Cannot be used at the same time
-10. Immediately, I will be releasing high-performance versions of express and KOA just like Fastify
+10. Static routing can use. HTML to avoid conflict with normal routing
 
 ## Advantage
 - **Babel** uses the next generation of JS syntax sugar, which is the most concise and readable code in history

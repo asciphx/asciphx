@@ -6,8 +6,8 @@ const ctx=(obj,...arr:Array<Object>)=>{
   Object.assign(o,...arr);return o
 }
 const html=(req,rep,...obj:Array<Object>)=>{
-  let u=url.parse(req.url).path.replace(/^\//,'');
-  rep.view(u===""?u="index.html":u=u+".html", ...obj)
+  let u=url.parse(req.url).path.replace(/^\//,'')||"index.html";
+  rep.view(u, ...obj)
 }
 const suffix=(name:String)=>{
   return name.replace(/().*(?=)\./,'\.');

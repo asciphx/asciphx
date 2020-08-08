@@ -46,7 +46,7 @@
 ## 插件支持
 1. such as:obj::func、?.、??、|>、#、||=、&&=、@decorators、function*、do{...}
 2. support strip-types. eg:function foo(one: any, two: number, three?): string {}
-
+3. 在fastify的point-of-view组件能让静态路由可采用.html来避免与普通路由发生的冲突
 
 ## 需要更改的配置
 1. vsCode settings:
