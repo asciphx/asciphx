@@ -63,6 +63,7 @@
     "start:build": "babel src --out-dir dist --no-comments && node dist/index.js",
     "watch": "rm -rf dist && babel src --watch --out-dir dist --no-comments",
     "watch:pro": "rm -rf dist && gulp build && gulp watch",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "pm2":"pm2 start .json"
   }
 }
