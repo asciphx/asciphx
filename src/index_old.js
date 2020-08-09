@@ -26,7 +26,10 @@ createConnection().then(async conn => {
           value: {type:sqlCheck(r.DATA_TYPE)}
         });
       })
-      Routes.forEach(r=>{if(r.c.name+".js"===f[i])r.p=v})
+      Routes.forEach(r=>{if(r.c.name+".js"===f[i]){
+        if(r.p.result===undefined)r.p=vv[r.c.name.replace(/(\w*)[A-Z]\w*/,"$1")+".js"]
+        else r.p.result={type:"object",properties:vv[r.c.name.replace(/(\w*)[A-Z]\w*/,"$1")+".js"]}
+      }})
       if(i==f.length-1)h=false;v=null;
     })
   }
@@ -46,7 +49,7 @@ createConnection().then(async conn => {
           })
         })
         app.listen(3000,err => { if (err) throw err;else console.log(`FastifyServer http://localhost:3000 to see`) })
-        f=null;//reclaiming memory
+        f=null;fff=null;//reclaiming memory
       }
     },10)
   }(h)
