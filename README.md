@@ -1,11 +1,15 @@
 <img align="left" height="144px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&icon_color=add8e6&text_color=718096&bg_color=ffffff&hide_title=true" />
 He is a self-taught developer with 3+ years of experience who loves electric playing and programming languages. He has contributed to various open-source projects. Three years ago he fell in like with the ECMAScript programming language, and since then he hasn't cheated on for any other.At the same time, he will also use go, delphi, typescript, Java, etc
 
-# **Asciphx**
+## **Asciphx**
 > Using Babel + typeorm + MySQL + fastify + gulp to build a spring boot architecture similar to Java, but with the performance of .Net core.
 > The plug-in nodemon can also cooperate with other collaborative work to make the development more centralized and focus on writing code
 
-## Example how to use [Asciphx中文文档](https://github.com/asciphx/asciphx/blob/master/README-zh_CN.md)
+### CLICK ME TO GET [Asciphx中文文档](https://github.com/asciphx/asciphx/blob/master/README-zh_CN.md)
+
+<details>
+<summary>Example how to use</summary>
+
 1. clone repository 
 2. install `eslint` globlly: `npm i -g eslint@7.6.0`
 3. run `npm i`
@@ -16,8 +20,11 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
 8. see `http://localhost:3000/user/json`,This is an example of return json
 9. Return * or rep.send (*) the effect is the same.Cannot be used at the same time
 10. Static routing can use. HTML to avoid conflict with normal routing
+<summary>
+</details>
+<details>
+<summary>Advantage</summary>
 
-## Advantage
 - **Babel** uses the next generation of JS syntax sugar, which is the most concise and readable code in history
 - Support **typeorm**, the best typescript ORM framework, easily write all kinds of logic of Dao layer
 - With the blessing of **fastify**, its performance has entered the top five in the world, and its complexity has been further improved, and it can complete the best functions
@@ -27,16 +34,21 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
 - Modular development makes the application easier to layer and provides an easy-to-use modular management mechanism
 - AOP code is written in a low-key way, but it is easy to realize log, interceptor, filter and other functions
 - MVC, API, websocket, microservice and other systems are constructed fastest, fastest and most fiercely
+<summary>
+</details>
+<details>
+<summary>Points for attention</summary>
 
-## Points for attention
 1. support experimental syntax just like obj::func、?.、??、|>、#、||=、&&=、@decorators、function*、do{...}
 2. support strip-types. eg:function foo(one: any, two: number, three?): string {}
 3. Patch of Windows users using CP or RM Linux command in `src/windows-lib`
 4. What is missing from the schema now is the querystring and headers,but not interferences
 5. Request characters will be accurate to case such as `localhost:3000/post`,if`localhost:3000/POst` will not right
+<summary>
+</details>
+<details>
+<summary>How to use CLI</summary>
 
-
-## How to use CLI?
 1. run `eslint --init` to create .eslintrc.js(If eslintrc.js file does not exist)
 2. install `typeorm` globally: `npm i -g typeorm`
 3. run `typeorm -h` to show list of available commands
@@ -48,9 +60,17 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
     },
     "javascript.validate.enable": false,
 ```
-## Example how to use [TypeORM](https://github.com/typeorm/typeorm)
-# Single core test(Mysql8)
-## loadtest http://localhost:3000/user/1 -t 10 -c 10 --rps 1000
+<summary>
+</details>
+<details>
+<summary>loadtest</summary>
+
+run npm -g loadtest  
+loadtest http://localhost:3000/user/1 -t 10 -c 10 --rps 1000
 1. (longest request)=> Fastify 280ms, KOA 401ms, express 649ms
 2. Completed requests=> Fastify(9436), KOA(9086), express(8960)
 3. Fastify framework performance is faster than the KOA framework
+<summary>
+</details>
+
+### Example how to use [TypeORM](https://github.com/typeorm/typeorm)
