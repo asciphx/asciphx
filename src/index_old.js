@@ -6,13 +6,13 @@ import {Controller} from "./controller"
 import {sqlCheck} from "./utils/tool"
 //Very unfortunate old version only support mysql query
 createConnection().then(async conn => {
-  const app = fastify({logger: true}).register(require('point-of-view'), {
+  const app = fastify({logger: false}).register(require('point-of-view'), {
     engine: {ejs: require('ejs')},templates: './views'
   })//use ejs template engine,but in HTML format,it is convenient to use eslint code prompt in HTML
   app.log.info("loading...")
   // await app.register(require('middie'))
   // app.use(require('cors')())
-  let f=[],h=true,
+  let f=[],h=true,n=0,
   dataBase=await fs.readFileSync('./ormconfig.json',e=>{if(e){return console.error(e);}})
   dataBase=JSON.parse(dataBase.toString()).database;
   fs.readdirSync(__dirname+"/controller").forEach(i=>{require(__dirname+"/controller/"+i);f.push(i)})
@@ -27,13 +27,13 @@ createConnection().then(async conn => {
         });
       })
       Routes.forEach(r=>{if(r.c.name+".js"===f[i]){
-        if(r.p.result===undefined)r.p=vv[r.c.name.replace(/(\w*)[A-Z]\w*/,"$1")+".js"]
-        else r.p.result={type:"object",properties:vv[r.c.name.replace(/(\w*)[A-Z]\w*/,"$1")+".js"]}
+        if(r.p.result===undefined)r.p=v
+        else r.p.result={type:"object",properties:v}
       }})
       if(i==f.length-1)h=false;v=null;
     })
   }
-  return await function fff(){
+  return function fff(){console.log('%O', new Date());
     setTimeout(()=>{
       if(h)return fff();else {
         // console.log(Routes);
