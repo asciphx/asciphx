@@ -15,8 +15,8 @@
 - ......
 
 ## Demo
-- [KOA](https://github.com/asciphx/asciphx/sample/koa-babel) KOA框架，写起来稍微麻烦但速度兼具的框架🎁
-- [express](https://github.com/asciphx/asciphx/sample/express-babel) express架构，写起来方便，只是性能稍微略低点🎁
+- [KOA](https://github.com/asciphx/asciphx/tree/master/sample/koa-babel) KOA框架，写起来稍微麻烦但速度兼具的框架🎁
+- [express](https://github.com/asciphx/asciphx/tree/master/sample/express-babel) express架构，写起来方便，只是性能稍微略低点🎁
 
 ## 特征
 - [x] Class类装饰器默认值为 "/"+实体类名 ,当然也可以自定义

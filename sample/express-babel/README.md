@@ -3,7 +3,7 @@
 > The plug-in nodemon can also cooperate with other collaborative work to make the development more centralized and focus on writing code
 > pm2 support,and static router use ".html" suffix
 
-## Example how to use [express-babel中文文档](https://github.com/asciphx/asciphx/sample/express-babel/README-zh_CN.md)
+## Example how to use [express-babel中文文档](https://github.com/asciphx/asciphx/tree/master/sample/express-babel/README-zh_CN.md)
 1. clone repository 
 2. install `eslint` globlly: `npm i -g eslint@7.6.0`
 3. run `npm i`

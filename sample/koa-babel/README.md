@@ -4,7 +4,7 @@
 > pm2 support,and static router use ".html" suffix
 > If the dist folder is the latest one compiled last time, you can use the first terminal 'gulp watch' and the second terminal 'NPM run dev'.
 
-# Example how to use [koa-babel中文文档](https://github.com/asciphx/asciphx/sample/koa-babel/README-zh_CN.md)
+# Example how to use [koa-babel中文文档](https://github.com/asciphx/asciphx/tree/master/sample/koa-babel/README-zh_CN.md)
 1. clone repository 
 2. install `eslint` globlly: `npm i -g eslint@7.6.0`
 3. run `npm i`
