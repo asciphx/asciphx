@@ -12,7 +12,7 @@ createConnection().then(async conn => {
   app.log.info("loading...")
   // await app.register(require('middie'))
   // app.use(require('cors')())
-  let f=[],h=true,n=0,
+  let f=[],h=true,
   dataBase=await fs.readFileSync('./ormconfig.json',e=>{if(e){return console.error(e);}})
   dataBase=JSON.parse(dataBase.toString()).database;
   fs.readdirSync(__dirname+"/controller").forEach(i=>{require(__dirname+"/controller/"+i);f.push(i)})
