@@ -1,4 +1,4 @@
-<img align="left" height="145px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&icon_color=add8e6&text_color=718096&bg_color=ffffff&hide_title=true" />
+<img align="left" height="142px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&icon_color=add8e6&text_color=718096&bg_color=ffffff&hide_title=true" />
 He is a self-taught developer with 3+ years of experience who loves electric playing and programming languages. He has contributed to various open-source projects. Three years ago he fell in like with the ECMAScript programming language, and since then he hasn't cheated on for any other.
 
 ## **Asciphx**
