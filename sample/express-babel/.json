@@ -1,0 +1,19 @@
+{
+    "apps":
+    {
+      "name": "io",
+      "cwd": "./",
+      "script": "dist/index.js",
+      "ignore_watch": [
+        "node_modules",
+        ".vscode",
+        "src",
+        "windows-lib"
+      ],
+      "instances": "max",
+      "min_uptime": "30s",
+      "max_restarts": 30,
+      "exec_mode" : "cluster_mode",
+      "watch": false
+    }
+  }
