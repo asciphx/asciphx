@@ -65,8 +65,8 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
 <details>
 <summary>loadtest</summary>
 
-run npm -g loadtest  
-loadtest http://localhost:3000/user/1 -t 10 -c 10 --rps 1000
+run `npm -g loadtest`  
+`loadtest http://localhost:3000/user/1 -t 10 -c 10 --rps 1000`
 1. (longest request)=> Fastify 280ms, KOA 401ms, express 649ms
 2. Completed requests=> Fastify(9436), KOA(9086), express(8960)
 3. Fastify framework performance is faster than the KOA framework
