@@ -59,7 +59,8 @@
 ```
 2. 请勿将await语法内用插件支持的操作符，可能会导致await失效;
 解决方案，await(...)。使用括号包裹，阻止babel翻译失败。
-3. 需要npm i -g eslint@7.6.0 以便支持内部的语法检查
+3. 需要npm i -g eslint@7.6.0 以便支持内部的语法检查。
+4. ormconfig.json中的synchronize，设置为true则自动同步实体类到数据库。
 
 ## 注意
 1. **如何运行**：
