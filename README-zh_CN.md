@@ -88,7 +88,7 @@ controller层下的请尽量保持大小驼峰命名规范
 schema验证目前采用src/util/tool下的ctx方法，得配合@Ctx一起使用，才行
 Fastify也是作为世界排名前五的服务端框架之一，前五还有iris，有.net core
 虽然Fastfify并不是最快的，但是论扩展和可维护性，代码可读性都非常强
-不久之后，我将会提交KOA和express版本的Babel框架，2者性能以及代码还在优化中
+KOA和express版本的Babel框架已经出品，在sample目录
 4. **请赞助本项目**：
 如你觉有收获，请给我打赏
 
