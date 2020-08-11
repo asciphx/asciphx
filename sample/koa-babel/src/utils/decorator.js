@@ -31,7 +31,9 @@ const Put = (r="") => (target, key) => {Routes.push({c:target.constructor.name,a
 const Del = (r="") => (target, key) => {Routes.push({c:target.constructor.name,a:key,m:"delete",r:r})}
 
 const Roles = (r:Array) => (target, key) => {
-  let f=Routes[Routes.length-1];if(f.w){f.w=[...f.w,...r]}else{f.w=[...r]}f=null
+  let f=Routes[Routes.length-1];if(f.a!==key){
+    console.log(target.constructor.name+":"+key+" use @Roles has to be on the top!")
+  }else if(f.w){f.w=[...f.w,...r]}else{f.w=[...r]}f=null
 }
 const Service=v=>(target,key)=>{ target[key] = new (v);return target }
 export {Routes,Class,Get,Post,Put,Del,Roles,Service};
