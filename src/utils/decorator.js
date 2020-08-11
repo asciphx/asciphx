@@ -8,7 +8,7 @@ const Class = (v:String) => _class => {
   v=v??_class.name.replace(/(\w*)[A-Z]\w*/,"/$1").toLocaleLowerCase();
   for (let r=i,l=Routes.length;r<l;r++){
     if(Routes[r].c===_class.name){
-      Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(r);i++
+      Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
     }
   }
   if(RECORDROUTE){
