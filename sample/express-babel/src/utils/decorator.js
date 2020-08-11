@@ -22,19 +22,20 @@ const Class = (v:String) => _class => {
     JSON.stringify(a,['r','m','a'],"\t"),'utf8',e=>{if(e)console.error(e)})
   }a=null;
 }
-const Get = (r="") => (target, methodName, desc) => {
+const Get = (r="") => (target, methodName) => {
   Routes.push({c:target.constructor.name,a:methodName,m:"get",r:r})
 }
-const Post = (r="") => (target, methodName, desc) => {
+const Post = (r="") => (target, methodName) => {
   Routes.push({c:target.constructor.name,a:methodName,m:"post",r:r})
 }
-const Put = (r="") => (target, methodName, desc) => {
+const Put = (r="") => (target, methodName) => {
   Routes.push({c:target.constructor.name,a:methodName,m:"put",r:r})
 }
-const Del = (r="") => (target, methodName, desc) => {
+const Del = (r="") => (target, methodName) => {
   Routes.push({c:target.constructor.name,a:methodName,m:"delete",r:r})
 }
-const Roles = (r:Array) => (target, methodName, desc) => {
+const Roles = (r:Array) => (target, methodName) => {
   let f=Routes[Routes.length-1];if(f.w){f.w=[...f.w,...r]}else{f.w=[...r]}f=null
 }
-export {Routes,Class,Get,Post,Put,Del,Roles};
+const Service=v=>(target,key)=>{ target[key] = new (v);return target }
+export {Routes,Class,Get,Post,Put,Del,Roles,Service};

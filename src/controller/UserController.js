@@ -1,11 +1,11 @@
-import {Ctx,Class,Get,Post,Put,Del,Roles} from "../utils/decorator"
+import {Ctx,Class,Get,Post,Put,Del,Roles,Service} from "../utils/decorator"
 import {W} from '../weblogic'
 import {UserService} from "../service/UserService"
 import { ctx } from "../utils/tool";
 
 @Class()
 export class UserController{
-  userSvc = new UserService()
+  @Service(UserService) userSvc:UserService
 
   @Roles([W.Qx])
   @Get(2,"/str")//return string

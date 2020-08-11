@@ -1,10 +1,10 @@
-import {Class,Get,Post,Put,Del,Roles} from "../utils/decorator"
+import {Class,Get,Post,Put,Del,Roles,Service} from "../utils/decorator"
 import {W} from "../weblogic"
 import {AdminService} from "../service/AdminService"
 
 @Class()
 export class AdminController{
-  adminSvc=new AdminService()
+  @Service(AdminService) adminSvc:AdminService
 
   @Roles([W.Qx])
   @Get()

@@ -1,11 +1,11 @@
-import {Ctx,Class,Get,Post,Put,Del,Roles} from "../utils/decorator"
+import {Ctx,Class,Get,Post,Put,Del,Roles,Service} from "../utils/decorator"
 import {W} from '../weblogic'
 import {AdminService} from "../service/AdminService"
 import {ctx} from "../utils/tool"
 
 @Class()
 export class AdminController{
-  adminSvc=new AdminService()
+  @Service(AdminService) adminSvc:AdminService
   
   @Roles([W.Qx,W.Login])//check login state
   @Get(1)//return array
