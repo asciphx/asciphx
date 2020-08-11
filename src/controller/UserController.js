@@ -16,7 +16,7 @@ export class UserController{
   @Ctx({etc:2},{code:3})//Write each key value individually
   @Get(0,"/json")//return define json
   async json(req, rep) {
-    return ctx(null,{etc:"json",code:200});//no need to write separately
+    return {etc:"json",code:200};//no need to write separately
   }
   @Get(1)//return array
   async all(req, rep) {
