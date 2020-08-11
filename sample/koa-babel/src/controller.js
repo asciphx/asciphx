@@ -1,4 +1,3 @@
-import {Context} from "koa"
 import {html} from "./utils/tool"
 import {Class,Get} from "./utils/decorator"
 
@@ -6,15 +5,15 @@ import {Class,Get} from "./utils/decorator"
 export class Controller{
   @Get()
   @Get("index.html")
-  async index(ctx:Context){
+  async index(ctx){
     await html(ctx,{test:"test",author:"asciphx"})
   }
   @Get("login.html")
-  async login(ctx:Context){
+  async login(ctx){
     await html(ctx,{test:"test",author:"Login"})
   }
   @Get("register.html")
-  async register(ctx:Context){
+  async register(ctx){
     await html(ctx,{test:"test",author:"Register"})
   }
 }
