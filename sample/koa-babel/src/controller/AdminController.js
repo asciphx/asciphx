@@ -28,7 +28,7 @@ export class AdminController{
   @Roles([W.Qx,W.Login])
   @Put("/:id")
   async update(ctx) {
-    ctx.body=await this.adminSvc.update(ctx.params.id,ctx.body);
+    ctx.body=await this.adminSvc.update(ctx.params.id,ctx.request.body);
   }
   @Roles([W.Qx])
   @Del("/:id")
