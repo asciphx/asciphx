@@ -8,6 +8,13 @@ import {sqlCheck} from "./utils/tool"
 createConnection().then(async conn => {
   const app = fastify({logger: false}).register(require('point-of-view'), {
     engine: {ejs: require('ejs')},templates: './views'
+  }).addContentTypeParser('application/x-www-form-urlencoded', { parseAs: 'string' }, function (req, body, done) {
+    try {
+      done(null, JSON.parse("{\"" + body.replace(/=/g, "\":\"").replace(/&/g, "\",\"") + "\"}"))
+    } catch (err) {
+      err.statusCode = 400
+      done(err, undefined)
+    }
   })//use ejs template engine,but in HTML format,it is convenient to use eslint code prompt in HTML
   app.log.info("loading...")
   // await app.register(require('middie'))
