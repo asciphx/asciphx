@@ -3,26 +3,26 @@ import {Admin} from "../entity/Admin"
 
 export class AdminService{
   admin=getRepository(Admin)
-  async all(){
-    return await this.admin.find()
+  all(){
+    return this.admin.find()
   }
   /** search one
    * @param id userid
    */
-  async one(id:Number){
-    return await this.admin.findOne(id);
+  one(id:Number){
+    return this.admin.findOne(id);
   }
   /** save one
    * @param obj
    */
-  async save(obj:Admin) {
+  save(obj:Admin) {
     return this.admin.save(obj);
   }
   /** update one
    * @param id
    * @param obj
    */
-  async update(id,obj) {
+  update(id,obj) {
     return this.admin.update(id,obj);
   }
   /** remove one
@@ -30,6 +30,6 @@ export class AdminService{
    */
   async remove(id) {
     let rm = await this.admin.findOne(id);
-    return await this.admin.remove(rm);
+    return this.admin.remove(rm);
   }
 }
