@@ -5,11 +5,18 @@ import {Routes} from "./utils/decorator"
 import {Controller} from "./controller"
 import {sqlCheck} from "./utils/tool"
 // import {User} from "./entity/User"
-
+function url2Obj(obj) {return ; }
 createConnection().then(async conn => {
   //`logger:false`disable can make it faster unless you use it in devDependencies
   const app = fastify({logger: false}).register(require('point-of-view'), {
     engine: {ejs: require('ejs')},templates: './views'
+  }).addContentTypeParser('application/x-www-form-urlencoded', { parseAs: 'string' }, function (req, body, done) {
+    try {
+      done(null, JSON.parse("{\"" + body.replace(/=/g, "\":\"").replace(/&/g, "\",\"") + "\"}"))
+    } catch (err) {
+      err.statusCode = 400
+      done(err, undefined)
+    }
   })//use ejs template engine,but in HTML format,it is convenient to use eslint code prompt in HTML
   app.log.info("loading...")
   // await app.register(require('middie'))
