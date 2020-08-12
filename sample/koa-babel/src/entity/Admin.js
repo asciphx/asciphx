@@ -5,7 +5,7 @@ export class Admin {
     id:Number
     @Column("varchar",{length: 25, name: "username"})
     username:String
-    @Column("varchar",{length: 20})
+    @Column("varchar",{length: 50})
     password:String
     @Column("varchar",{length: 25})
     name:String
