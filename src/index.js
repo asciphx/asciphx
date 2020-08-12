@@ -5,7 +5,7 @@ import {Routes} from "./utils/decorator"
 import {Controller} from "./controller"
 import {sqlCheck} from "./utils/tool"
 // import {User} from "./entity/User"
-function url2Obj(obj) {return ; }
+
 createConnection().then(async conn => {
   //`logger:false`disable can make it faster unless you use it in devDependencies
   const app = fastify({logger: false}).register(require('point-of-view'), {
