@@ -14,7 +14,7 @@ const Class = (v:String) => _class => {
   if(RECORDROUTE){
     if(global.ONCE){$b=fs.existsSync("./dist/routes/");global.ONCE=false}else $b=true
     !$b&&fs.mkdir("./dist/routes/",function(err){
-      if (err){return console.error(e);}
+      if (err){return console.error(err);}
       fs.writeFile(path.resolve("./dist/routes", `./${_class.name}.json`),
       JSON.stringify(a,['r','m','a'],"\t"),'utf8',e=>{if(e)console.error(e)})
     });
