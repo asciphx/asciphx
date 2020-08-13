@@ -7,9 +7,7 @@ const Class = (v:String) => _class => {
   let a=[];if(v==="")v=null;
   v=v??_class.name.replace(/(\w*)[A-Z]\w*/,"/$1").toLocaleLowerCase();
   for (let r=i,l=Routes.length;r<l;r++){
-    if(Routes[r].c===_class.name){
-      Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
-    }
+    Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
   }
   if(RECORDROUTE){
     if(global.ONCE){$b=fs.existsSync("./dist/routes/");global.ONCE=false}else $b=true
@@ -33,16 +31,16 @@ const Ctx =(...i)=>(target, key)=>{
   Routes[Routes.length-1].p=f;
 }
 const Get = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
-  Routes.push({c:target.constructor.name,a:key,m:"get",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
+  Routes.push({a:key,m:"get",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
 }
 const Post = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
-  Routes.push({c:target.constructor.name,a:key,m:"post",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
+  Routes.push({a:key,m:"post",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
 }
 const Put = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
-  Routes.push({c:target.constructor.name,a:key,m:"put",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
+  Routes.push({a:key,m:"put",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
 }
 const Del = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
-  Routes.push({c:target.constructor.name,a:key,m:"delete",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
+  Routes.push({a:key,m:"delete",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
 }
 const Roles = (...r:Array) => (target, key)=>{let f=Routes[Routes.length-1];if(f.a!==key){
   console.log(target.constructor.name+":"+key+" use @Roles has to be on the top!")

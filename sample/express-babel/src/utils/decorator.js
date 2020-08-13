@@ -7,9 +7,7 @@ const Class = (v:String) => _class => {
   let a=[];if(v==="")v=null;
   v=v??_class.name.replace(/(\w*)[A-Z]\w*/,"/$1");
   for (let r=i,l=Routes.length;r<l;r++){
-    if(Routes[r].c===_class.name){
-      Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
-    }
+    Routes[r].c=_class;Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
   }
   if(RECORDROUTE){
     if(global.ONCE){$b=fs.existsSync("./dist/routes/");global.ONCE=false}else $b=true
@@ -23,16 +21,16 @@ const Class = (v:String) => _class => {
   }a=null;
 }
 const Get = (r="") => (target, key) => {
-  Routes.push({c:target.constructor.name,a:key,m:"get",r:r})
+  Routes.push({a:key,m:"get",r:r})
 }
 const Post = (r="") => (target, key) => {
-  Routes.push({c:target.constructor.name,a:key,m:"post",r:r})
+  Routes.push({a:key,m:"post",r:r})
 }
 const Put = (r="") => (target, key) => {
-  Routes.push({c:target.constructor.name,a:key,m:"put",r:r})
+  Routes.push({a:key,m:"put",r:r})
 }
 const Del = (r="") => (target, key) => {
-  Routes.push({c:target.constructor.name,a:key,m:"delete",r:r})
+  Routes.push({a:key,m:"delete",r:r})
 }
 const Roles = (...r:Array) => (target, key) => {
   let f=Routes[Routes.length-1];if(f.a!==key){
