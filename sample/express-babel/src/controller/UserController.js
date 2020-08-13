@@ -6,12 +6,12 @@ import {UserService} from "../service/UserService"
 export class UserController{
   @Service(UserService) userSvc:UserService
 
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Get()
   async all() {
     return this.userSvc.all();
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Get("/:id")
   async one(req) {
     return this.userSvc.one(req.params.id)
@@ -20,12 +20,12 @@ export class UserController{
   async save(req) {
     return this.userSvc.save(req.body);
   }
-  @Roles([W.Qx,W.Login])
+  @Roles(W.Qx,W.Login)
   @Put("/:id")
   async update(req) {
     return this.userSvc.update(req.params.id,req.body);
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Del("/:id")
   async remove(req) {
     await this.userSvc.remove(req.params.id);

@@ -7,12 +7,12 @@ import {ctx} from "../utils/tool"
 export class AdminController{
   @Service(AdminService) adminSvc:AdminService
   
-  @Roles([W.Qx,W.Login])//check login state
+  @Roles(W.Qx,W.Login)//check login state
   @Get(1)//return array
   async all(req, rep) {
     return await this.adminSvc.all();
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Ctx({code:3},{msg:2})//customize the return properties(because jsonSchema)
   @Get(0,"/:id")//Fusion object,and return it
   async one(req, rep) {
@@ -22,12 +22,12 @@ export class AdminController{
   async save(req, rep) {
     return await this.adminSvc.save(req.body);
   }
-  @Roles([W.Qx,W.Login])
+  @Roles(W.Qx,W.Login)
   @Put("/:id")
   async update(req, rep) {
     return await this.adminSvc.update(req.params.id,req.body);
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Del("/:id")
   async remove(req, rep) {
     return await this.adminSvc.remove(req.params.id);

@@ -44,8 +44,8 @@ const Put = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
 const Del = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
   Routes.push({c:target.constructor.name,a:key,m:"delete",r:r??$s,s:typeof p==="number"?JSONSCHEMA[p]:"object",p:{}})
 }
-const Roles = (r:Array) => (target, key)=>{let f=Routes[Routes.length-1];if(f.a!==key){
+const Roles = (...r:Array) => (target, key)=>{let f=Routes[Routes.length-1];if(f.a!==key){
   console.log(target.constructor.name+":"+key+" use @Roles has to be on the top!")
-}else if(f.w){f.w=[...f.w,...r]}else{f.w=[...r]};f=null}
+}else if(f.w){f.w=[...f.w,...r]}else{f.w=r};f=null}
 const Service=v=>(target,key)=>{ target[key] = new (v);return target }
 export {Routes,Class,Ctx,Get,Post,Put,Del,Roles,Service};

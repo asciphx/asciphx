@@ -15,7 +15,7 @@ const N=require('nedb-session-store')(session)
 createConnection().then(connection => {
   console.time("time");global.ONCE=true;
   fs.readdirSync(__dirname+"/controller").forEach((i)=>{require(__dirname+"/controller/"+i)});
-  const app = express().use(require('connect-flash')()).use(bodyParser.urlencoded({ extended:false }))
+  const app = express().use(require('connect-flash')()).use(bodyParser.json({limit:Config.jsonLimit}));
   schedule.scheduleJob('*/25 * * * *',()=>deleteOne(Config.dbLog))
   app.use(session({
     name:Config.session.name,secret:Config.session.secret,cookie:Config.session.cookie,//期限毫秒,25min,path:'/',secure:true
@@ -27,7 +27,7 @@ createConnection().then(connection => {
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Origin',req.headers.origin);
     res.locals.session=req.session;res.locals.err=req.flash('err');next();
-  });
+  }).use(bodyParser.urlencoded({ extended:true,limit:Config.jsonLimit }));
   Routes.forEach(r=>app[r.m](...r.w?[r.r,r.w]:[r.r],(req,res,next)=>{
     const c = (new (r.c))[r.a](req, res, next);
     if (c instanceof Promise)

@@ -7,12 +7,12 @@ import { ctx } from "../utils/tool";
 export class UserController{
   @Service(UserService) userSvc:UserService
 
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Get(2,"/str")//return string
   async str(req, rep) {
     return "dhsdhdsh";//or rep.send("dhsdhdsh")
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Ctx({etc:2},{code:3})//Write each key value individually
   @Get(0,"/json")//return define json
   async json(req, rep) {
@@ -22,7 +22,7 @@ export class UserController{
   async all(req, rep) {
     return await this.userSvc.all();
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Get("/:id")
   async one(req, rep) {
     return await (req.params.id |> this.userSvc.one);

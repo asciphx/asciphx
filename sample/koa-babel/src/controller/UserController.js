@@ -6,12 +6,12 @@ import {UserService} from "../service/UserService"
 export class UserController{
   @Service(UserService) userSvc:UserService
 
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Get()
   async all(ctx) {
     ctx.body=await this.userSvc.all();
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Get("/:id")
   async one(ctx) {
     // let v=await ctx.params.id |> this.userSvc.findOne;//will not work
@@ -26,12 +26,12 @@ export class UserController{
   async save(ctx) {
     ctx.body=await this.userSvc.save(ctx.request.body);
   }
-  @Roles([W.Qx,W.Login])
+  @Roles(W.Qx,W.Login)
   @Put("/:id")
   async update(ctx) {
     ctx.body=await this.userSvc.update(ctx.params.id,ctx.request.body);
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Del("/:id")
   async remove(ctx) {
     ctx.body=await this.userSvc.remove(ctx.params.id);

@@ -16,9 +16,7 @@ createConnection().then(async connection => {
   }))
   const router = new Router()
   Routes.forEach(r => {
-    r.w ? router[r.m](r.r,...r.w,async (ctx:Context,next) =>{
-      await (new (r.c))[r.a](ctx,next)
-    }) : router[r.m](r.r,async (ctx:Context,next) =>{
+    router[r.m](...r.w?[r.r,...r.w]:[r.r],async (ctx:Context,next) =>{
       await (new (r.c))[r.a](ctx,next)/*Test ctx:Context below this line,be prompted with code(because performance)*/
 
     })

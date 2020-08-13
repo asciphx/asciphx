@@ -6,12 +6,13 @@ import {AdminService} from "../service/AdminService"
 export class AdminController{
   @Service(AdminService) adminSvc:AdminService
 
-  @Roles([W.Qx])
+  @Roles(W.Qx,W.Login)
   @Get()
   async all() {
     return this.adminSvc.all();
   }
-  @Roles([W.Login])
+  @Roles(W.Login)
+  @Roles(W.Qx)
   @Get("/:id")
   async one(req) {
     return this.adminSvc.one(req.params.id)
@@ -20,12 +21,12 @@ export class AdminController{
   async save(req) {
     return this.adminSvc.save(req.body);
   }
-  @Roles([W.Qx,W.Login])
+  @Roles(W.Qx)
   @Put("/:id")
   async update(req) {
     return this.adminSvc.update(req.params.id,req.body);
   }
-  @Roles([W.Qx])
+  @Roles(W.Qx)
   @Del("/:id")
   async remove(req) {
     await this.adminSvc.remove(req.params.id);
