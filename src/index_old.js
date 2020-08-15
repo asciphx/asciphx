@@ -33,7 +33,7 @@ createConnection().then(async conn => {
           value: {type:sqlCheck(r.DATA_TYPE)}
         });
       })
-      Routes.forEach(r=>{if(r.c.name+".js"===f[i]){
+      Routes.forEach(r=>{if(r.c+".js"===f[i]){
         if(r.p.result===undefined)r.p=v
         else r.p.result={type:"object",properties:v}
       }})
@@ -50,8 +50,7 @@ createConnection().then(async conn => {
           }
           r.w?opts.preHandler=r.w:undefined;
           app[r.m](r.r, opts, (req:FastifyRequest,rep:FastifyReply)=>{
-            const c = (new r.c)[r.a](req,rep);
-            if (c instanceof Promise)
+            const c = r.a(req,rep);if (c instanceof Promise)
               c.then(c=>c!==undefined&&c!==null?rep.send(c):undefined);
           })
         })

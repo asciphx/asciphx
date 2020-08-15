@@ -29,7 +29,7 @@ createConnection().then(connection => {
     res.locals.session=req.session;res.locals.err=req.flash('err');next();
   }).use(bodyParser.urlencoded({ extended:true,limit:Config.jsonLimit }));
   Routes.forEach(r=>app[r.m](...r.w?[r.r,r.w]:[r.r],(req,res,next)=>{
-    const c = (new (r.c))[r.a](req, res, next);
+    const c = r.a(req, res, next);
     if (c instanceof Promise)
       c.then(c=>c!==undefined&&c!==null?res.send(c):undefined)
     else if (c!==undefined&&c!==null)
