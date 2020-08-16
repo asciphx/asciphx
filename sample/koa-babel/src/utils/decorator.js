@@ -2,23 +2,23 @@ const fs = require('fs')
 const RECORDROUTE = require('../config').Config.printRoute
 const path = require('path')
 
-let Routes=[],$b=true,i=0,$Class
-const Class = (v:String) => _class => {
-  let a=[],_=new _class;if(v==="")v=null;
-  v=v??_class.name.replace(/(\w*)[A-Z]\w*/,"/$1");
+let Routes=[],$b=true,i=0,$
+const Class = (v:String) => _ => {
+  let a=[];if(v==="")v=null;
+  v=v??_.name.replace(/(\w*)[A-Z]\w*/,"/$1");
   for (let r=i,l=Routes.length;r<l;r++){
-    Routes[r].a=_[Routes[r].a].bind($Class);Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
+    Routes[r].a=_.prototype[Routes[r].a].bind($);Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
   }
   if(RECORDROUTE){
     if(global.ONCE){$b=fs.existsSync("./dist/routes/");global.ONCE=false}else $b=true
     !$b&&fs.mkdir("./dist/routes/",function(err){
       if (err){return console.error(err);}
-      fs.writeFile(path.resolve("./dist/routes", `./${_class.name}.json`),
+      fs.writeFile(path.resolve("./dist/routes", `./${_.name}.json`),
       JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)})
     })
-    $b&&v!=="/"&&fs.writeFile(path.resolve("./dist/routes", `./${_class.name}.json`),
+    $b&&v!=="/"&&fs.writeFile(path.resolve("./dist/routes", `./${_.name}.json`),
     JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)})
-  }a=_=$Class=null;
+  }a=_=$=null;
 }
 const Get = (r="") => (target, key) => {Routes.push({a:key,m:"get",r:r})}
 
@@ -33,5 +33,5 @@ const Roles = (...r:Array) => (target, key) => {
     console.log(target.constructor.name+":"+key+" use @Roles has to be on the top!")
   }else if(f.w){f.w=[...f.w,...r]}else{f.w=r}f=null
 }
-const Service=v=>(target,key)=>{ target[key] = new (v);$Class=target }
+const Service=v=>(target,key)=>{Object.defineProperty($={},key,{enumerable:false,configurable:false,writable:false,value:new(v)})}
 export {Routes,Class,Get,Post,Put,Del,Roles,Service};
