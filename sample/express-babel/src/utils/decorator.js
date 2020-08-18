@@ -14,11 +14,11 @@ const Class = (v:String) => _ => {
     if($once){$b=fs.existsSync("./dist/routes/");$once=false}else $b=true
     !$b&&fs.mkdir("./dist/routes/",function(err){
       if (err){return console.error(err);}
-      fs.writeFile(path.resolve("./dist/routes", `./${v===""?"$Controller":_.name}.json`),
+      fs.writeFile(path.resolve("./dist/routes", `./${v==="/"?"$Controller":_.name}.json`),
       JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)});a=null
     })
     if($b){
-      fs.writeFile(path.resolve("./dist/routes", `./${v===""?"$Controller":_.name}.json`),
+      fs.writeFile(path.resolve("./dist/routes", `./${v==="/"?"$Controller":_.name}.json`),
       JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)});a=null
     }_=$=null
   }else a=_=$=null;
