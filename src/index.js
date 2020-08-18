@@ -21,7 +21,7 @@ createConnection().then(async conn => {
   app.log.info("loading...")
   // await app.register(require('middie'))
   // app.use(require('cors')())
-  let f=[],vv={},h=true;global.ONCE=true;
+  let f=[],vv={},h=true;
   await fs.readdirSync(__dirname+"/controller").forEach(i=>{require(__dirname+"/controller/"+i);f.push(i)})
   await fs.readdirSync(__dirname+"/entity").forEach(i=>{
     let v={},en=require(__dirname+"/entity/"+i);

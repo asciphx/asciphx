@@ -2,23 +2,26 @@ const fs = require('fs'),path = require('path')
 const JSONSCHEMA = require('../config').Config.jsonSchema
 const RECORDROUTE = require('../config').Config.printRoute
 
-let Routes=[],$s,$b=true,i=0,$
+let Routes=[],$s,$b=true,$once=true,i=0,$
 const Class = (v:String) => _ => {
   let a=[];if(v==="")v=null;
   v=v??_.name.replace(/(\w*)[A-Z]\w*/,"/$1").toLocaleLowerCase();
   for (let r=i,l=Routes.length;r<l;r++){
-    Routes[r].c=_.name;Routes[r].a=_.prototype[Routes[r].a].bind($);Routes[r].r=v+Routes[r].r;a.push(Routes[r]);i++
+    Routes[r].r=v+Routes[r].r;if(RECORDROUTE)a.push(Routes[r]);
+    Routes[r].c=_.name;Routes[r].a=_.prototype[Routes[r].a].bind($);i++
   }
   if(RECORDROUTE){
-    if(global.ONCE){$b=fs.existsSync("./dist/routes/");global.ONCE=false}else $b=true
+    if($once){$b=fs.existsSync("./dist/routes/");$once=false}else $b=true
     !$b&&fs.mkdir("./dist/routes/",function(err){
       if (err){return console.error(err);}
-      fs.writeFile(path.resolve("./dist/routes", `./${_.name}.json`),
-      JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)})
+      fs.writeFile(path.resolve("./dist/routes", `./${v==="/"?"$Controller":_.name}.json`),
+      JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)});a=null
     });
-    $b&&v!=="/"&&fs.writeFile(path.resolve("./dist/routes", `./${_.name}.json`),
-    JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)})
-  }a=_=$=null;
+    if($b){
+      fs.writeFile(path.resolve("./dist/routes", `./${v==="/"?"$Controller":_.name}.json`),
+      JSON.stringify(a,['r','m'],"\t"),'utf8',e=>{if(e)console.error(e)});a=null
+    }_=$=null
+  }else a=_=$=null;
 }
 //jsonSchema now support defalut:"object",1:"array",2:"string",3:"number",etc.
 //@Schema only on top of the other decorate except for @Roles,You can customize the return properties of the schema

@@ -13,7 +13,7 @@ import {Controller} from "./controller"
 
 const N=require('nedb-session-store')(session)
 createConnection().then(connection => {
-  console.time("time");global.ONCE=true;
+  console.time("time");
   fs.readdirSync(__dirname+"/controller").forEach((i)=>{require(__dirname+"/controller/"+i)});
   const app = express().use(require('connect-flash')()).use(bodyParser.json({limit:Config.jsonLimit}));
   schedule.scheduleJob('*/25 * * * *',()=>deleteOne(Config.dbLog))

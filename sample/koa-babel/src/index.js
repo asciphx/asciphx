@@ -9,7 +9,7 @@ import {Controller} from "./controller"
 // import {User} from "./entity/User"
 
 createConnection().then(async connection => {
-  console.time("time");global.ONCE=true;
+  console.time("time");
   await fs.readdirSync(__dirname+"/controller").forEach((i)=>{require(__dirname+"/controller/"+i)})
   const app = new Koa().use(bodyParser()).use(views(require('path').join(__dirname,'../views'),{
     extension: 'html',map: { html: "ejs" }
