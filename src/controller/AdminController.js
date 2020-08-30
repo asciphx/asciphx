@@ -1,16 +1,20 @@
 import {Ctx,Class,Get,Post,Put,Del,Roles,Service} from "../utils/decorator"
 import {W} from '../weblogic'
 import {AdminService} from "../service/AdminService"
+import {UserService} from "../service/UserService"
 import {ctx} from "../utils/tool"
 
 @Class()
 export class AdminController{
   @Service(AdminService) adminSvc:AdminService
+  @Service(UserService) userSvc:UserService
   
-  @Roles(W.Qx,W.Login)//check login state
+  @Roles(W.Qx)
   @Get(1)//return array
   async all(req, rep) {
-    return await this.adminSvc.all();
+    let a=await this.adminSvc.all();
+    let u=await this.userSvc.all();
+    return [...a,...u]
   }
   @Roles(W.Qx)
   @Ctx({code:3},{msg:2})//customize the return properties(because jsonSchema)
@@ -22,7 +26,7 @@ export class AdminController{
   async save(req, rep) {
     return await this.adminSvc.save(req.body);
   }
-  @Roles(W.Qx,W.Login)
+  @Roles(W.Qx,W.Login)//check login state
   @Put("/:id")
   async update(req, rep) {
     return await this.adminSvc.update(req.params.id,req.body);

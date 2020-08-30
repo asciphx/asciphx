@@ -2,7 +2,7 @@ const fs = require('fs'),path = require('path')
 const JSONSCHEMA = require('../config').Config.jsonSchema
 const RECORDROUTE = require('../config').Config.printRoute
 
-let Routes=[],$s,$b=true,$once=true,i=0,$
+let Routes=[],$s,$b=true,$once=true,i=0,$=null
 const Class = (v:String) => _ => {
   let a=[];if(v==="")v=null;
   v=v??_.name.replace(/(\w*)[A-Z]\w*/,"/$1").toLocaleLowerCase();
@@ -48,5 +48,5 @@ const Del = (p?,r?) => (target, key) => {typeof p==="string"?$s=p:$s="";
 const Roles = (...r:Array) => (target, key)=>{let f=Routes[Routes.length-1];if(f.a!==key){
   console.log(target.constructor.name+":"+key+" use @Roles has to be on the top!")
 }else if(f.w){f.w=[...f.w,...r]}else{f.w=r};f=null}
-const Service=v=>(target,key)=>{Object.defineProperty($={},key,{enumerable:false,configurable:false,writable:false,value:new(v)})}
+const Service=v=>(target,key)=>{if($===null)$={};Object.defineProperty($,key,{enumerable:false,configurable:false,writable:false,value:new(v)})}
 export {Routes,Class,Ctx,Get,Post,Put,Del,Roles,Service};
