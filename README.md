@@ -4,7 +4,7 @@ He is a self-taught developer with 3+ years of experience who loves electric pla
 ## [Forum link(论坛链接)](http://www.91huanwei.com)
 
 ## **Asciphx**
-> Using Babel + typeorm + MySQL + fastify + gulp to build a spring boot architecture similar to Java, but with the performance of .Net core.
+> Using Babel + typeorm + MySQL + fastify + gulp to build a architecture, but with the performance of .Net core.
 > The plug-in nodemon can also cooperate with other collaborative work to make the development more centralized and focus on writing code
 
 ### CLICK ME TO GET [Asciphx中文文档](https://github.com/asciphx/asciphx/blob/master/README-zh_CN.md)
