@@ -5,6 +5,7 @@ module.exports = function (api) {
     ["@babel/plugin-proposal-pipeline-operator", { proposal: "minimal" }],
     ["@babel/plugin-proposal-decorators", { legacy: true }],
     ["@babel/plugin-proposal-private-methods", { loose: true }],
+    ["@babel/plugin-proposal-private-property-in-object", { loose: true }],
     ["@babel/plugin-transform-runtime",{corejs: false,helpers: true,
       regenerator: true,useESModules: false}],"@babel/plugin-transform-flow-strip-types",
     ["@babel/proposal-class-properties", {loose: true,"spec": true}],"transform-inline-consecutive-adds",
