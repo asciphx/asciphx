@@ -1,5 +1,5 @@
 <img align="left" height="142px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&icon_color=add8e6&text_color=718096&bg_color=ffffff&hide_title=true" />
-He is a self-taught developer with 3+ years of experience who loves programming languages. He has contributed to various open-source projects. Three years ago he fell in like with the ECMAScript programming language, and since then he hasn't cheated on for any other. Stealing is shameless, especially if you don't give star what you want to steal from a person with the world's first intelligence! I should be ashamed of each everyone of you mental retardation!
+He is a self-taught developer with 3+ years of experience who loves programming languages. He has contributed to various open-source projects. Stealing is shameless, especially if you don't give star what you want to steal from a person with the world's first intelligence! Please don't compare intelligence with an unfortunate person!
 
 ## [Forum link(论坛链接)](http://www.91huanwei.com)
 
