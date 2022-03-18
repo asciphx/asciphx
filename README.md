@@ -1,5 +1,5 @@
 <img align="left" height="142px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&text_color=718096&theme=highcontrast&hide_title=true" />
-He is a self-taught developer with 3+ years of experience who loves programming languages. He has contributed to various open-source projects. Stealing is shameless, especially if you don't give star what you want to steal from a person with the world's first intelligence! Please don't compare intelligence with an unfortunate person!  
+He is a self-taught developer with 3+ years of experience who loves programming languages. He has contributed to various open-source projects. Stealing is shameless, especially if you don't give star what you want to steal from a person with the world's first IQ! If someone copied and imitated my code, please pay IQ tax. Because intelligence represents everything.
 
 <img align="left" width="100%" height="142px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asciphx&layout=compact&theme=dark" />
 
