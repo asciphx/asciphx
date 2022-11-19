@@ -1,6 +1,5 @@
 <img align="left" height="142px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&text_color=718096&theme=highcontrast&hide_title=true" />
-He is a self-taught developer with 3+ years of experience who loves programming languages. He has won honors in school, second in mountaineering, third in 1.6km long-distance running, first in eyesight, second in physics and fourth in Mathematical Olympiad. But unfortunately, he was beaten and injured. But IQ represents everything.
-
+He is a self-taught developer with 3+ years of experience who loves programming languages. He has won honors in school, second in mountaineering, third in 1.6km long-distance running, first in eyesight, second in physics and fourth in Mathematical Olympiad. I didn't study hard, I was beaten by people who were jealous of me, I had no experience, no connections, only intelligence. I am not an ordinary person, my family is also very bad, I quarrel and abuse every day.
 <img align="left" width="100%" height="142px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asciphx&layout=compact&theme=dark" />
 
 ### My frist vscode Plugin extension
