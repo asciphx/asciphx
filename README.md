@@ -1,5 +1,5 @@
 <img align="left" height="142px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&text_color=718096&theme=highcontrast&hide_title=true" />
-He is a self-taught developer with 3+ years of experience who loves programming languages. He didn't study hard because someone hit him, and he didn't gain experience. His family background is also very bad which quarrel every day, even make him unable to concentrate, so he can be proficient in each subject that comes without practice and learning and study.
+He is a self-taught developer with 3+ years of experience who loves programming languages. He didn't study hard because someone hit him, so he didn't gain experience. His family background is also very bad which quarrel every day, even make him unable to concentrate, so he can be proficient in each subject that comes without practice and learning and study.
 <img align="left" width="100%" height="142px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asciphx&layout=compact&theme=dark" />
 
 ### My frist vscode Plugin extension
