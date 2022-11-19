@@ -1,5 +1,5 @@
 <img align="left" height="142px" src="https://github-readme-stats.vercel.app/api?username=asciphx&show_icons=true&text_color=718096&theme=highcontrast&hide_title=true" />
-He is a self-taught developer with 3+ years of experience who loves programming languages. I didn't study hard, I was beaten by people who were jealous of me, I had no experience, no connections. I am not an ordinary person, and my family background is also very bad. I quarrel every day, and even make me unable to concentrate, so I am omnipotent, I can do every subject, and I can be proficient in each subject. I refuse to copy my code by idiots, because this is fucking.
+He is a self-taught developer with 3+ years of experience who loves programming languages. I didn't study hard, I was beaten by people who were jealous of me, I had no experience, no connections. I am not an ordinary person, and my family background is also very bad. I quarrel every day, and even make me unable to concentrate, so I am omnipotent, I can do every subject, and I can be proficient in each subject that comes without practice and learning and study.
 <img align="left" width="100%" height="142px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asciphx&layout=compact&theme=dark" />
 
 ### My frist vscode Plugin extension
