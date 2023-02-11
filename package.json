@@ -55,7 +55,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-uglify": "^3.0.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "cors": "^2.8.5",
