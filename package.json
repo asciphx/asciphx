@@ -64,6 +64,6 @@
     "middie": "^6.0.0",
     "mysql": "^2.18.1",
     "point-of-view": "^5.1.0",
-    "typeorm": "^0.2.45"
+    "typeorm": "^0.3.15"
   }
 }
