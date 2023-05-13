@@ -2,17 +2,7 @@
 He is a self-taught developer with 3+ years of experience who loves programming languages. He didn't study hard because someone hit him, so he didn't gain experience. He can be proficient in each subject that comes without practice and learning and study. He uses more than 14 languages such as c, c++, rust, go, c#, javascript, css, typescript, html, python, java, lua, delphi, android, shell.
 <img align="left" width="100%" height="142px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=asciphx&layout=compact&theme=dark" />
 
-### My frist vscode Plugin extension
-![Dark Pro+](./dark%20pro+.jpg)
-
-## [Forum link(论坛链接)](http://8.129.58.72)
-
-## **Asciphx**
-> Using Babel + typeorm + MySQL + fastify + gulp to build a architecture, but with the performance of .Net core.
-> The plug-in nodemon can also cooperate with other collaborative work to make the development more centralized and focus on writing code
-
-### CLICK ME TO GET [Asciphx中文文档](https://github.com/asciphx/asciphx/blob/master/README-zh_CN.md)
-
+## ...
 <details>
 <summary>Example how to use</summary>
 
@@ -52,31 +42,6 @@ He is a self-taught developer with 3+ years of experience who loves programming 
 5. Request characters will be accurate to case such as `localhost:3000/post`,if`localhost:3000/POst` will not right
 <summary>
 </details>
-<details>
-<summary>How to use CLI</summary>
 
-1. run `eslint --init` to create .eslintrc.js(If eslintrc.js file does not exist)
-2. install `typeorm` globally: `npm i -g typeorm`
-3. run `typeorm -h` to show list of available commands
-4. vsCode settings:
-```json
-    "emmet.includeLanguages": {
-        "vue-html": "html",
-        "javascript": "javascriptreact"
-    },
-    "javascript.validate.enable": false,
-```
-<summary>
-</details>
-<details>
-<summary>loadtest</summary>
-
-run `npm -g loadtest`  
-`loadtest http://localhost:3000/user/1 -t 10 -c 10 --rps 1000`
-1. (longest request)=> Fastify 280ms, KOA 401ms, express 649ms
-2. Completed requests=> Fastify(9436), KOA(9086), express(8960)
-3. Fastify framework performance is faster than the KOA framework
-<summary>
-</details>
-
-### Example how to use [TypeORM](https://github.com/typeorm/typeorm)
+### My frist vscode Plugin extension
+<img src="./dark%20pro+.jpg" width="500" height="350" alt="Dark Pro+" align=center>
